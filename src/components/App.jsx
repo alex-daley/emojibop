@@ -1,8 +1,14 @@
-function App() {
+import React from 'react';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+
+function App({ emojis }) {
   return (
-    <div>
-      Hello World
-    </div>
+    <Container maxWidth="md">
+      <Grid container spacing={2}>
+        
+      </Grid>
+    </Container>
   );
 }
 

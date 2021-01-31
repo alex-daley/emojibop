@@ -4,12 +4,16 @@ import Grid from '@material-ui/core/Grid';
 import makeStyles from '@material-ui/core/styles/makeStyles';
 import groupBy from 'lodash/groupBy';
 import startCase from 'lodash/startCase';
+import Header from './Header';
 import EmojiAccordion from './EmojiAccordion';
 
 const useStyles = makeStyles(theme => ({
   accordionContainer: {
     width: '100%',
     marginTop: theme.spacing(4)
+  },
+  header: {
+    marginBottom: theme.spacing(2)
   }
 }));
 
@@ -31,6 +35,9 @@ function App({ emojis }) {
     <Container maxWidth="xs">
       <Grid container spacing={2}>
         <div className={classes.accordionContainer}>
+          <div className={classes.header}>
+            <Header/>
+          </div>
           {emojiGroups.map(([name, emojis], i) => {
             return (
               <EmojiAccordion

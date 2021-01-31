@@ -19,12 +19,12 @@ function EmojiAccordion({ title, emojis }) {
     <Accordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography>
-          {title}
+          {title.v}
         </Typography>
       </AccordionSummary>
       <AccordionDetails>
         <Typography>
-          {emojis.map(emoji => <EmojiGlyph emoji={emoji}/>)}
+          {emojis.map((emoji, i) => <EmojiGlyph key={i} emoji={emoji}/>)}
         </Typography>
       </AccordionDetails>
     </Accordion>

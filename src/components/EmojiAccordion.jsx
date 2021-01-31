@@ -4,17 +4,26 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import EmojiPopover from './EmojiPopover';
 
-function EmojiGlyph({ emoji }) {
+function EmojiGlyph({ emoji, onClick }) {
   const style = {
-    display: 'inline-block', 
-    width: '24px'
+    display: 'inline-block',
+    width: '32px',
+    cursor: 'pointer'
   };
 
-  return <span style={style}>{emoji.glyph}</span>
+  return (
+    <span onClick={e => onClick?.(e)} style={style}>
+      {emoji.glyph}
+    </span>
+  );
 }
 
 function EmojiAccordion({ title, emojis }) {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [emoji, setEmoji] = React.useState(null);
+
   return (
     <Accordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
@@ -23,9 +32,28 @@ function EmojiAccordion({ title, emojis }) {
         </Typography>
       </AccordionSummary>
       <AccordionDetails>
-        <Typography>
-          {emojis.map((emoji, i) => <EmojiGlyph key={i} emoji={emoji}/>)}
+        <Typography variant='h5'>
+          {emojis.map((emoji, i) => {
+            return (
+              <EmojiGlyph
+                key={i}
+                emoji={emoji}
+                onClick={e => {
+                  setAnchorEl(e.currentTarget);
+                  setEmoji(emoji);
+                }}
+              />
+            )
+          })}
         </Typography>
+        <EmojiPopover
+          anchorEl={anchorEl}
+          emoji={emoji}
+          onClose={() => {
+            setAnchorEl(null);
+            setEmoji(null);
+          }}
+        />
       </AccordionDetails>
     </Accordion>
   )

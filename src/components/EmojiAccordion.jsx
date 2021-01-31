@@ -19,7 +19,7 @@ function EmojiAccordion({ title, emojis }) {
     <Accordion>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography>
-          {title.v}
+          {title}
         </Typography>
       </AccordionSummary>
       <AccordionDetails>

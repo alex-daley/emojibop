@@ -2,7 +2,8 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
-import TableRow from '@material-ui/core/TableRow'
+import TableRow from '@material-ui/core/TableRow';
+import Typography from '@material-ui/core/Typography';
 
 function EmojiPopoverTable({ emoji }) {
   if (!emoji) {
@@ -15,7 +16,9 @@ function EmojiPopoverTable({ emoji }) {
         <TableBody>
           <TableRow>
             <TableCell>{'Glyph:'}</TableCell>
-            <TableCell><bold>{emoji.glyph}</bold></TableCell>
+            <TableCell>
+              <Typography variant='h2'>{emoji.glyph}</Typography>
+            </TableCell>
           </TableRow>
           <TableRow>
             <TableCell>{'Name:'}</TableCell>

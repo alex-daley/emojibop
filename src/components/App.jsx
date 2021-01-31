@@ -30,6 +30,8 @@ function titleCase(title) {
 function App({ emojis }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
+  const [emoji, setEmoji] = React.useState(null);
+
   const emojiGroups = groupEmojis(emojis);
 
   const handleAccordionChange = (index) => {
@@ -41,7 +43,7 @@ function App({ emojis }) {
       <Grid container spacing={2}>
         <div className={classes.accordionContainer}>
           <div className={classes.header}>
-            <Header/>
+            <Header emojiGlyph={emoji?.glyph}/>
           </div>
           {emojiGroups.map(([name, emojis], index) => {
             return (
@@ -51,6 +53,7 @@ function App({ emojis }) {
                 emojis={emojis}
                 expanded={expanded === index}
                 onChange={() => handleAccordionChange(index)}
+                onEmojiClick={emoji => setEmoji(emoji)}
               />
             )
           })}

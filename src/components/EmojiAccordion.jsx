@@ -24,7 +24,7 @@ function EmojiGlyph({ emoji, selected, onClick }) {
   );
 }
 
-function EmojiAccordion({ title, emojis, expanded, onChange }) {
+function EmojiAccordion({ title, emojis, expanded, onChange, onEmojiClick }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [selectedEmoji, setEmoji] = React.useState(null);
 
@@ -46,6 +46,7 @@ function EmojiAccordion({ title, emojis, expanded, onChange }) {
                 onClick={e => {
                   setAnchorEl(e.currentTarget);
                   setEmoji(emoji);
+                  onEmojiClick?.(emoji)
                 }}
               />
             )

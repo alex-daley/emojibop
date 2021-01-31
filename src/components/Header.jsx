@@ -1,10 +1,10 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 
-function Header() {
+function Header({ emojiGlyph }) {
   return (
     <Typography role='h1' variant='h2'>
-      Emojibop 😎
+     { `Emojibop ${emojiGlyph ?? '😎'}` }
     </Typography>
   );
 }

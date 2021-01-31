@@ -20,12 +20,12 @@ function EmojiGlyph({ emoji, onClick }) {
   );
 }
 
-function EmojiAccordion({ title, emojis }) {
+function EmojiAccordion({ title, emojis, expanded, onChange }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [emoji, setEmoji] = React.useState(null);
 
   return (
-    <Accordion>
+    <Accordion expanded={expanded} onChange={onChange}>
       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
         <Typography>
           {title}

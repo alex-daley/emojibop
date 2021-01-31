@@ -14,7 +14,7 @@ function EmojiGlyph({ emoji, selected, onClick }) {
   };
 
   if (selected) {
-    style.border = '1px solid black';
+    style.background = 'CornflowerBlue';
   }
 
   return (

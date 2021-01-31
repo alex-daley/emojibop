@@ -6,12 +6,16 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import EmojiPopover from './EmojiPopover';
 
-function EmojiGlyph({ emoji, onClick }) {
+function EmojiGlyph({ emoji, selected, onClick }) {
   const style = {
     display: 'inline-block',
     width: '32px',
     cursor: 'pointer'
   };
+
+  if (selected) {
+    style.border = '1px solid black';
+  }
 
   return (
     <span onClick={e => onClick?.(e)} style={style}>
@@ -22,7 +26,7 @@ function EmojiGlyph({ emoji, onClick }) {
 
 function EmojiAccordion({ title, emojis, expanded, onChange }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [emoji, setEmoji] = React.useState(null);
+  const [selectedEmoji, setEmoji] = React.useState(null);
 
   return (
     <Accordion expanded={expanded} onChange={onChange}>
@@ -38,6 +42,7 @@ function EmojiAccordion({ title, emojis, expanded, onChange }) {
               <EmojiGlyph
                 key={i}
                 emoji={emoji}
+                selected={emoji === selectedEmoji}
                 onClick={e => {
                   setAnchorEl(e.currentTarget);
                   setEmoji(emoji);
@@ -48,7 +53,7 @@ function EmojiAccordion({ title, emojis, expanded, onChange }) {
         </Typography>
         <EmojiPopover
           anchorEl={anchorEl}
-          emoji={emoji}
+          emoji={selectedEmoji}
           onClose={() => {
             setAnchorEl(null);
             setEmoji(null);

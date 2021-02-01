@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/emojibop/static/js/main.6a4a02ae.chunk.js",
-    "main.js.map": "/emojibop/static/js/main.6a4a02ae.chunk.js.map",
+    "main.js": "/emojibop/static/js/main.fc409d5c.chunk.js",
+    "main.js.map": "/emojibop/static/js/main.fc409d5c.chunk.js.map",
     "runtime-main.js": "/emojibop/static/js/runtime-main.6b2c8e77.js",
     "runtime-main.js.map": "/emojibop/static/js/runtime-main.6b2c8e77.js.map",
-    "static/js/2.3e1f16d9.chunk.js": "/emojibop/static/js/2.3e1f16d9.chunk.js",
-    "static/js/2.3e1f16d9.chunk.js.map": "/emojibop/static/js/2.3e1f16d9.chunk.js.map",
+    "static/js/2.5324b8d3.chunk.js": "/emojibop/static/js/2.5324b8d3.chunk.js",
+    "static/js/2.5324b8d3.chunk.js.map": "/emojibop/static/js/2.5324b8d3.chunk.js.map",
     "index.html": "/emojibop/index.html",
-    "static/js/2.3e1f16d9.chunk.js.LICENSE.txt": "/emojibop/static/js/2.3e1f16d9.chunk.js.LICENSE.txt"
+    "static/js/2.5324b8d3.chunk.js.LICENSE.txt": "/emojibop/static/js/2.5324b8d3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6b2c8e77.js",
-    "static/js/2.3e1f16d9.chunk.js",
-    "static/js/main.6a4a02ae.chunk.js"
+    "static/js/2.5324b8d3.chunk.js",
+    "static/js/main.fc409d5c.chunk.js"
   ]
 }

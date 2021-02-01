@@ -5,6 +5,7 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 import groupBy from 'lodash/groupBy';
 import startCase from 'lodash/startCase';
 import Header from './Header';
+import Footer from './Footer';
 import EmojiAccordion from './EmojiAccordion';
 
 const useStyles = makeStyles(theme => ({
@@ -14,6 +15,9 @@ const useStyles = makeStyles(theme => ({
   },
   header: {
     marginBottom: theme.spacing(2)
+  },
+  footer: {
+    marginTop: theme.spacing(2)
   }
 }));
 
@@ -39,7 +43,7 @@ function App({ emojis }) {
   };
 
   return (
-    <Container maxWidth="xs">
+    <Container maxWidth="md">
       <Grid container spacing={2}>
         <div className={classes.accordionContainer}>
           <div className={classes.header}>
@@ -57,6 +61,9 @@ function App({ emojis }) {
               />
             )
           })}
+        </div>
+        <div className={classes.footer}>
+          <Footer/>
         </div>
       </Grid>
     </Container>
